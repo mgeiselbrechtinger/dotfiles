@@ -4,7 +4,8 @@
 dotdir=dotfiles
 
 # dir to safe old confs
-oldcfs=.old_confs
+oldcfs=".oldcfs_$(date +%y_%m_%d_%H_%M)"
+mkdir $oldcfs
 
 # blacklisted files
 blf=($0 README.md)
