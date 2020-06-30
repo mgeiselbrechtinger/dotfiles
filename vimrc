@@ -27,7 +27,7 @@ augroup filetypedetect
     au! BufRead,BufNewFile *nc setfiletype nc
 augroup END
 
-set path+=**
+set path=**
 set wildmenu
 
 com -nargs=1 -complete=file_in_path Fi tabe | find <args>
