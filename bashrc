@@ -150,6 +150,9 @@ alias conbt='bluetoothctl -- connect 0C:A6:94:DC:1D:F6'
 alias dconbt='bluetoothctl -- disconnect 0C:A6:94:DC:1D:F6'
 alias conjbl='bluetoothctl -- connect B8:69:C2:35:CD:3C'
 alias dconjbl='bluetoothctl -- disconnect B8:69:C2:35:CD:3C'
+alias lswifi='nmcli device wifi list'
+alias conwifi='nmcli device wifi connect woke_net'
+alias dconwifi='nmcli device disconnect wlp59s0'
 
 # Path extensions:
 export PATH="$HOME/.cabal/bin:$HOME/.ghcup/bin:$PATH"
