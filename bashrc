@@ -155,8 +155,9 @@ alias conwifi='nmcli device wifi connect woke_net'
 alias dconwifi='nmcli device disconnect wlp59s0'
 
 # Path extensions:
-export PATH="$HOME/.cabal/bin:$HOME/.ghcup/bin:$PATH"
+export PATH="$HOME/.cabal/bin:$HOME/.ghcup/bin:$HOME/esp-open-sdk/xtensa-lx106-elf/bin:$PATH"
 
 # Vim as default editor and bash keybindings
 export EDITOR=vim
 set -o vi
+
