@@ -146,8 +146,6 @@ alias ll='ls -l'
 alias ende='trans en:de'
 alias deen='trans de:en'
 alias bt='bluetoothctl'
-alias conbt='bluetoothctl -- connect 0C:A6:94:DC:1D:F6'
-alias dconbt='bluetoothctl -- disconnect 0C:A6:94:DC:1D:F6'
 alias conjbl='bluetoothctl -- connect B8:69:C2:35:CD:3C'
 alias dconjbl='bluetoothctl -- disconnect B8:69:C2:35:CD:3C'
 alias lswifi='nmcli device wifi list'
@@ -160,4 +158,11 @@ export PATH="$HOME/.cabal/bin:$HOME/.ghcup/bin:$HOME/esp-open-sdk/xtensa-lx106-e
 # Vim as default editor and bash keybindings
 export EDITOR=vim
 set -o vi
+
+# Latex command that only preserves pdf and source file
+mklatex ()
+{
+    mkdir "/tmp/$1_latex_out"
+    pdflatex -output-directory "/tmp/$1_latex_out" $1 && cp "/tmp/$1_latex_out/$1.pdf" ./
+}
 
