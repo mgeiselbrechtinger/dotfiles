@@ -151,6 +151,7 @@ alias dconjbl='bluetoothctl -- disconnect B8:69:C2:35:CD:3C'
 alias lswifi='nmcli device wifi list'
 alias conwifi='nmcli device wifi connect woke_net'
 alias dconwifi='nmcli device disconnect wlp59s0'
+alias rename='perl-rename'
 
 # Path extensions:
 export PATH="$HOME/.cabal/bin:$HOME/.ghcup/bin:$HOME/esp-open-sdk/xtensa-lx106-elf/bin:$PATH"

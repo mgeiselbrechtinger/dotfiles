@@ -1,31 +1,37 @@
 set nocompatible
 filetype indent plugin on
 syntax on
+
 set hidden
 set wildmenu
 set showcmd
 set hlsearch
+
 set ignorecase
 set smartcase
+
 set backspace=indent,eol,start
 set autoindent
 set nostartofline
 set ruler
 set laststatus=2
+set visualbell
+set t_vb=
 set mouse=a
-set cmdheight=1
-set nu
-set cursorline
-highlight CursorLineNR ctermbg=white
+set cmdheight=2
+set number
+set timeoutlen=1000 ttimeoutlen=0
+"set notimeout ttimeout ttimeoutlen=200
+
 set shiftwidth=4
 set softtabstop=4
 set expandtab
+
+map Y y$
+nnoremap <C-L> :nohl<CR><C-L>
+
 set clipboard=unnamedplus
 colorscheme desert
-
-augroup filetypedetect
-    au! BufRead,BufNewFile *nc setfiletype nc
-augroup END
 
 set path=**
 set wildmenu
