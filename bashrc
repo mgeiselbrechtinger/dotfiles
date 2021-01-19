@@ -152,6 +152,16 @@ alias lswifi='nmcli device wifi list'
 alias conwifi='nmcli device wifi connect woke_net'
 alias dconwifi='nmcli device disconnect wlp59s0'
 alias rename='perl-rename'
+alias cva4='convert -page a4'
+alias scan="hp-scan -r'150' -s'pdf'"
+
+#
+# # Deletes all files except those given as argument
+# # Usage: rm_not <files>
+rm_not ()
+{
+    find ./ -maxdepth 1 ! -name "$1" | xargs rm -r 2> /dev/null
+}
 
 # Path extensions:
 export PATH="$HOME/.cabal/bin:$HOME/.ghcup/bin:$HOME/esp-open-sdk/xtensa-lx106-elf/bin:$PATH"
@@ -166,4 +176,5 @@ mklatex ()
     mkdir "/tmp/$1_latex_out"
     pdflatex -output-directory "/tmp/$1_latex_out" $1 && cp "/tmp/$1_latex_out/$1.pdf" ./
 }
+
 
