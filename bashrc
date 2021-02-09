@@ -166,6 +166,9 @@ rm_not ()
 # Path extensions:
 export PATH="$HOME/.cabal/bin:$HOME/.ghcup/bin:$HOME/esp-open-sdk/xtensa-lx106-elf/bin:$PATH"
 
+# Execute script when starting pyhton interpreter
+export PYTHONSTARTUP="$HOME/.python_shell_init.py"
+
 # Vim as default editor and bash keybindings
 export EDITOR=vim
 set -o vi
