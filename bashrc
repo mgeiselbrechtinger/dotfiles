@@ -141,20 +141,6 @@ ex ()
   fi
 }
 
-# Aliases:
-alias ll='ls -l'
-alias ende='trans en:de'
-alias deen='trans de:en'
-alias bt='bluetoothctl'
-alias conjbl='bluetoothctl -- connect B8:69:C2:35:CD:3C && pulseaudio-equalizer enable' 
-alias dconjbl='bluetoothctl -- disconnect B8:69:C2:35:CD:3C && pulseaudio-equalizer disable'
-alias lswifi='nmcli device wifi list'
-alias conwifi='nmcli device wifi connect woke_net'
-alias dconwifi='nmcli device disconnect wlp59s0'
-alias rename='perl-rename'
-alias cva4='convert -page a4'
-alias scan="hp-scan -r'150' -s'pdf'"
-
 #
 # # Deletes all files except those given as argument
 # # Usage: rm_not <files>
@@ -162,9 +148,6 @@ rm_not ()
 {
     find ./ -maxdepth 1 ! -name "$1" | xargs rm -r 2> /dev/null
 }
-
-# Path extensions:
-export PATH="$HOME/.cabal/bin:$HOME/.ghcup/bin:$HOME/esp-open-sdk/xtensa-lx106-elf/bin:$PATH"
 
 # Execute script when starting pyhton interpreter
 export PYTHONSTARTUP="$HOME/.python_shell_init.py"
@@ -179,5 +162,27 @@ mklatex ()
     mkdir "/tmp/$1_latex_out"
     pdflatex -output-directory "/tmp/$1_latex_out" $1 && cp "/tmp/$1_latex_out/$1.pdf" ./
 }
+
+# Quartus and Modelsim extensions
+export QSYS_ROOTDIR="/home/max/intelFPGA_lite/20.1/quartus/sopc_builder/bin"
+#export LD_LIBRARY_PATH="/usr/lib32:$LD_LIBRARY_PATH"
+
+# Aliases:
+alias ll='ls -l'
+alias ende='trans en:de'
+alias deen='trans de:en'
+alias bt='bluetoothctl'
+alias conjbl='bluetoothctl -- connect B8:69:C2:35:CD:3C && pulseaudio-equalizer enable' 
+alias dconjbl='bluetoothctl -- disconnect B8:69:C2:35:CD:3C && pulseaudio-equalizer disable'
+alias lswifi='nmcli device wifi list'
+alias conwifi='nmcli device wifi connect woke_net'
+alias dconwifi='nmcli device disconnect wlp59s0'
+alias rename='perl-rename'
+alias cva4='convert -page a4'
+alias scan="hp-scan -r'150' -s'pdf'"
+alias conda-mvcr="source /opt/anaconda/bin/activate mvcr"
+
+# Path extensions:
+ export PATH="$HOME/esp-open-sdk/xtensa-lx106-elf/bin:/opt/anaconda/bin:$HOME/intelFPGA_lite/20.1/quartus/bin:$HOME/intelFPGA_lite/20.1/modelsim_ase/linuxaloem/:$PATH"
 
 
