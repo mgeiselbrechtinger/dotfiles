@@ -163,12 +163,11 @@ mklatex ()
     pdflatex -output-directory "/tmp/$1_latex_out" $1 && cp "/tmp/$1_latex_out/$1.pdf" ./
 }
 
-# Remove safely to local trash
-rm -r "$HOME/.trash"
-mkdir "$HOME/.trash" 
+# Remove safely to trash
+mkdir "/tmp/max_trash" 
 rms ()
 {
-    cp -r "$1" "$HOME/.trash/" && rm -r "$1"
+    cp -r "$1" "/tmp/max_trash/" && rm -r "$1"
 }
 
 # Quartus and Modelsim extensions
