@@ -146,7 +146,7 @@ ex ()
 # # Usage: rm_not <files>
 rm_not ()
 {
-    find ./ -maxdepth 1 ! -name "$1" | xargs rm -r 2> /dev/null
+    find ./ -maxdepth 1 ! -name "$1" | xargs rms 2> /dev/null
 }
 
 # Execute script when starting pyhton interpreter
@@ -164,7 +164,7 @@ mklatex ()
 }
 
 # Remove safely to trash
-mkdir "/tmp/max_trash" 
+[[ ! -d /tmp/max_trash ]] && mkdir "/tmp/max_trash" 
 rms ()
 {
     cp -r "$1" "/tmp/max_trash/" && rm -r "$1"
