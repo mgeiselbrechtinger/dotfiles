@@ -163,8 +163,16 @@ mklatex ()
     pdflatex -output-directory "/tmp/$1_latex_out" $1 && cp "/tmp/$1_latex_out/$1.pdf" ./
 }
 
+# Remove safely to local trash
+rm -r "$HOME/.trash"
+mkdir "$HOME/.trash" 
+rms ()
+{
+    cp -r "$1" "$HOME/.trash/" && rm -r "$1"
+}
+
 # Quartus and Modelsim extensions
-export QSYS_ROOTDIR="/home/max/intelFPGA_lite/20.1/quartus/sopc_builder/bin"
+export QSYS_ROOTDIR="/home/max/intelFPGA_lite/18.1/quartus/sopc_builder/bin"
 #export LD_LIBRARY_PATH="/usr/lib32:$LD_LIBRARY_PATH"
 
 # Aliases:
@@ -183,6 +191,5 @@ alias scan="hp-scan -r'150' -s'pdf'"
 alias conda-mvcr="source /opt/anaconda/bin/activate mvcr"
 
 # Path extensions:
- export PATH="$HOME/esp-open-sdk/xtensa-lx106-elf/bin:/opt/anaconda/bin:$HOME/intelFPGA_lite/20.1/quartus/bin:$HOME/intelFPGA_lite/20.1/modelsim_ase/linuxaloem/:$PATH"
-
+ export PATH="$HOME/esp-open-sdk/xtensa-lx106-elf/bin:/opt/anaconda/bin/conda:$HOME/intelFPGA_lite/18.1/quartus/bin:$HOME/intelFPGA_lite/20.1/modelsim_ase/linuxaloem/:$PATH"
 
