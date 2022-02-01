@@ -167,7 +167,10 @@ mklatex ()
 [[ ! -d /tmp/max_trash ]] && mkdir "/tmp/max_trash" 
 rms ()
 {
-    cp -r "$1" "/tmp/max_trash/" && rm -r "$1"
+    for var in "$@"
+    do
+        cp -r "$var" "/tmp/max_trash/" && rm -r "$var"
+    done
 }
 
 # Quartus and Modelsim extensions
