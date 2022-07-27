@@ -19,3 +19,5 @@ for cf in * ; do
         cp -s "$HOME/${dotdir}/$cf" "$HOME/.${cf}"
     fi
 done
+
+source "$HOME/.bashrc"
